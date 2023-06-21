@@ -33,6 +33,6 @@ GEQUAL : '>=';
 LEQUAL : '<=';
 NOT : '!';
 
-COMMENT : '//'.*;
+COMMENT : '//'.*?;
 
 
