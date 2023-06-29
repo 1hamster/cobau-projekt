@@ -1,13 +1,16 @@
 grammar ArithmeticExpression;
 
+COMMENT : '//' ~[\r\n]* -> skip;
+WS : [ \t\r\n]+ -> skip;
+
 TRUE : 'true';
 FALSE : 'false';
-AND : ' and ';
-OR : ' or ';
-VAR : 'var ';
-PRINT : 'print ';
-IF : 'if ';
-ELSE : 'else ';
+AND : 'and';
+OR : 'or';
+VAR : 'var';
+PRINT : 'print';
+IF : 'if';
+ELSE : 'else';
 WHILE : 'while ';
 
 SEMICOLON : ';';
@@ -16,7 +19,7 @@ RPAREN : ')';
 LBRACE : '{';
 RBRACE : '}';
 
-STRING : '"'[^"]*'"';
+STRING : '"'.*?'"';
 NUMBER : [0-9]+('.'[0-9]+)?;
 IDENTIFIER: [A-Za-z][A-Za-z0-9]*;
 
@@ -32,8 +35,6 @@ LESSER : ' < ';
 GEQUAL : '>=';
 LEQUAL : '<=';
 NOT : '!';
-
-COMMENT : '//'.*?;
 
 program
         : declaration* EOF
@@ -65,7 +66,7 @@ ifStmt
         ;
 
 printStmt
-        : PRINT '"'expression'"' SEMICOLON
+        : PRINT expression SEMICOLON
         ;
 
 whileStmt
