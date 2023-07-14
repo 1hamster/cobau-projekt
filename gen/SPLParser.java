@@ -1,4 +1,4 @@
-// Generated from C:/Users/Leo/IdeaProjects/cobau-projekt/grammar\ArithmeticExpression.g4 by ANTLR 4.12.0
+// Generated from C:/Users/Leo/IdeaProjects/cobau-projekt/grammar\SPL.g4 by ANTLR 4.12.0
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
 import org.antlr.v4.runtime.*;
@@ -9,7 +9,7 @@ import java.util.Iterator;
 import java.util.ArrayList;
 
 @SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast", "CheckReturnValue"})
-public class ArithmeticExpressionParser extends Parser {
+public class SPLParser extends Parser {
 	static { RuntimeMetaData.checkVersion("4.12.0", RuntimeMetaData.VERSION); }
 
 	protected static final DFA[] _decisionToDFA;
@@ -88,7 +88,7 @@ public class ArithmeticExpressionParser extends Parser {
 	}
 
 	@Override
-	public String getGrammarFileName() { return "ArithmeticExpression.g4"; }
+	public String getGrammarFileName() { return "SPL.g4"; }
 
 	@Override
 	public String[] getRuleNames() { return ruleNames; }
@@ -99,14 +99,14 @@ public class ArithmeticExpressionParser extends Parser {
 	@Override
 	public ATN getATN() { return _ATN; }
 
-	public ArithmeticExpressionParser(TokenStream input) {
+	public SPLParser(TokenStream input) {
 		super(input);
 		_interp = new ParserATNSimulator(this,_ATN,_decisionToDFA,_sharedContextCache);
 	}
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class ProgramContext extends ParserRuleContext {
-		public TerminalNode EOF() { return getToken(ArithmeticExpressionParser.EOF, 0); }
+		public TerminalNode EOF() { return getToken(SPLParser.EOF, 0); }
 		public List<DeclarationContext> declaration() {
 			return getRuleContexts(DeclarationContext.class);
 		}
@@ -119,15 +119,15 @@ public class ArithmeticExpressionParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_program; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ArithmeticExpressionListener ) ((ArithmeticExpressionListener)listener).enterProgram(this);
+			if ( listener instanceof SPLListener ) ((SPLListener)listener).enterProgram(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ArithmeticExpressionListener ) ((ArithmeticExpressionListener)listener).exitProgram(this);
+			if ( listener instanceof SPLListener ) ((SPLListener)listener).exitProgram(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ArithmeticExpressionVisitor ) return ((ArithmeticExpressionVisitor<? extends T>)visitor).visitProgram(this);
+			if ( visitor instanceof SPLVisitor ) return ((SPLVisitor<? extends T>)visitor).visitProgram(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -182,15 +182,15 @@ public class ArithmeticExpressionParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_declaration; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ArithmeticExpressionListener ) ((ArithmeticExpressionListener)listener).enterDeclaration(this);
+			if ( listener instanceof SPLListener ) ((SPLListener)listener).enterDeclaration(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ArithmeticExpressionListener ) ((ArithmeticExpressionListener)listener).exitDeclaration(this);
+			if ( listener instanceof SPLListener ) ((SPLListener)listener).exitDeclaration(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ArithmeticExpressionVisitor ) return ((ArithmeticExpressionVisitor<? extends T>)visitor).visitDeclaration(this);
+			if ( visitor instanceof SPLVisitor ) return ((SPLVisitor<? extends T>)visitor).visitDeclaration(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -244,10 +244,10 @@ public class ArithmeticExpressionParser extends Parser {
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class VarDeclContext extends ParserRuleContext {
-		public TerminalNode VAR() { return getToken(ArithmeticExpressionParser.VAR, 0); }
-		public TerminalNode IDENTIFIER() { return getToken(ArithmeticExpressionParser.IDENTIFIER, 0); }
-		public TerminalNode SEMICOLON() { return getToken(ArithmeticExpressionParser.SEMICOLON, 0); }
-		public TerminalNode ASSIGN() { return getToken(ArithmeticExpressionParser.ASSIGN, 0); }
+		public TerminalNode VAR() { return getToken(SPLParser.VAR, 0); }
+		public TerminalNode IDENTIFIER() { return getToken(SPLParser.IDENTIFIER, 0); }
+		public TerminalNode SEMICOLON() { return getToken(SPLParser.SEMICOLON, 0); }
+		public TerminalNode ASSIGN() { return getToken(SPLParser.ASSIGN, 0); }
 		public ExpressionContext expression() {
 			return getRuleContext(ExpressionContext.class,0);
 		}
@@ -257,15 +257,15 @@ public class ArithmeticExpressionParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_varDecl; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ArithmeticExpressionListener ) ((ArithmeticExpressionListener)listener).enterVarDecl(this);
+			if ( listener instanceof SPLListener ) ((SPLListener)listener).enterVarDecl(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ArithmeticExpressionListener ) ((ArithmeticExpressionListener)listener).exitVarDecl(this);
+			if ( listener instanceof SPLListener ) ((SPLListener)listener).exitVarDecl(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ArithmeticExpressionVisitor ) return ((ArithmeticExpressionVisitor<? extends T>)visitor).visitVarDecl(this);
+			if ( visitor instanceof SPLVisitor ) return ((SPLVisitor<? extends T>)visitor).visitVarDecl(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -331,15 +331,15 @@ public class ArithmeticExpressionParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_statement; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ArithmeticExpressionListener ) ((ArithmeticExpressionListener)listener).enterStatement(this);
+			if ( listener instanceof SPLListener ) ((SPLListener)listener).enterStatement(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ArithmeticExpressionListener ) ((ArithmeticExpressionListener)listener).exitStatement(this);
+			if ( listener instanceof SPLListener ) ((SPLListener)listener).exitStatement(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ArithmeticExpressionVisitor ) return ((ArithmeticExpressionVisitor<? extends T>)visitor).visitStatement(this);
+			if ( visitor instanceof SPLVisitor ) return ((SPLVisitor<? extends T>)visitor).visitStatement(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -413,22 +413,22 @@ public class ArithmeticExpressionParser extends Parser {
 		public ExpressionContext expression() {
 			return getRuleContext(ExpressionContext.class,0);
 		}
-		public TerminalNode SEMICOLON() { return getToken(ArithmeticExpressionParser.SEMICOLON, 0); }
+		public TerminalNode SEMICOLON() { return getToken(SPLParser.SEMICOLON, 0); }
 		public ExprStmtContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_exprStmt; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ArithmeticExpressionListener ) ((ArithmeticExpressionListener)listener).enterExprStmt(this);
+			if ( listener instanceof SPLListener ) ((SPLListener)listener).enterExprStmt(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ArithmeticExpressionListener ) ((ArithmeticExpressionListener)listener).exitExprStmt(this);
+			if ( listener instanceof SPLListener ) ((SPLListener)listener).exitExprStmt(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ArithmeticExpressionVisitor ) return ((ArithmeticExpressionVisitor<? extends T>)visitor).visitExprStmt(this);
+			if ( visitor instanceof SPLVisitor ) return ((SPLVisitor<? extends T>)visitor).visitExprStmt(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -458,34 +458,34 @@ public class ArithmeticExpressionParser extends Parser {
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class IfStmtContext extends ParserRuleContext {
-		public TerminalNode IF() { return getToken(ArithmeticExpressionParser.IF, 0); }
-		public TerminalNode LPAREN() { return getToken(ArithmeticExpressionParser.LPAREN, 0); }
+		public TerminalNode IF() { return getToken(SPLParser.IF, 0); }
+		public TerminalNode LPAREN() { return getToken(SPLParser.LPAREN, 0); }
 		public ExpressionContext expression() {
 			return getRuleContext(ExpressionContext.class,0);
 		}
-		public TerminalNode RPAREN() { return getToken(ArithmeticExpressionParser.RPAREN, 0); }
+		public TerminalNode RPAREN() { return getToken(SPLParser.RPAREN, 0); }
 		public List<StatementContext> statement() {
 			return getRuleContexts(StatementContext.class);
 		}
 		public StatementContext statement(int i) {
 			return getRuleContext(StatementContext.class,i);
 		}
-		public TerminalNode ELSE() { return getToken(ArithmeticExpressionParser.ELSE, 0); }
+		public TerminalNode ELSE() { return getToken(SPLParser.ELSE, 0); }
 		public IfStmtContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_ifStmt; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ArithmeticExpressionListener ) ((ArithmeticExpressionListener)listener).enterIfStmt(this);
+			if ( listener instanceof SPLListener ) ((SPLListener)listener).enterIfStmt(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ArithmeticExpressionListener ) ((ArithmeticExpressionListener)listener).exitIfStmt(this);
+			if ( listener instanceof SPLListener ) ((SPLListener)listener).exitIfStmt(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ArithmeticExpressionVisitor ) return ((ArithmeticExpressionVisitor<? extends T>)visitor).visitIfStmt(this);
+			if ( visitor instanceof SPLVisitor ) return ((SPLVisitor<? extends T>)visitor).visitIfStmt(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -533,26 +533,26 @@ public class ArithmeticExpressionParser extends Parser {
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class PrintStmtContext extends ParserRuleContext {
-		public TerminalNode PRINT() { return getToken(ArithmeticExpressionParser.PRINT, 0); }
+		public TerminalNode PRINT() { return getToken(SPLParser.PRINT, 0); }
 		public ExpressionContext expression() {
 			return getRuleContext(ExpressionContext.class,0);
 		}
-		public TerminalNode SEMICOLON() { return getToken(ArithmeticExpressionParser.SEMICOLON, 0); }
+		public TerminalNode SEMICOLON() { return getToken(SPLParser.SEMICOLON, 0); }
 		public PrintStmtContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_printStmt; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ArithmeticExpressionListener ) ((ArithmeticExpressionListener)listener).enterPrintStmt(this);
+			if ( listener instanceof SPLListener ) ((SPLListener)listener).enterPrintStmt(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ArithmeticExpressionListener ) ((ArithmeticExpressionListener)listener).exitPrintStmt(this);
+			if ( listener instanceof SPLListener ) ((SPLListener)listener).exitPrintStmt(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ArithmeticExpressionVisitor ) return ((ArithmeticExpressionVisitor<? extends T>)visitor).visitPrintStmt(this);
+			if ( visitor instanceof SPLVisitor ) return ((SPLVisitor<? extends T>)visitor).visitPrintStmt(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -584,12 +584,12 @@ public class ArithmeticExpressionParser extends Parser {
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class WhileStmtContext extends ParserRuleContext {
-		public TerminalNode WHILE() { return getToken(ArithmeticExpressionParser.WHILE, 0); }
-		public TerminalNode LPAREN() { return getToken(ArithmeticExpressionParser.LPAREN, 0); }
+		public TerminalNode WHILE() { return getToken(SPLParser.WHILE, 0); }
+		public TerminalNode LPAREN() { return getToken(SPLParser.LPAREN, 0); }
 		public ExpressionContext expression() {
 			return getRuleContext(ExpressionContext.class,0);
 		}
-		public TerminalNode RPAREN() { return getToken(ArithmeticExpressionParser.RPAREN, 0); }
+		public TerminalNode RPAREN() { return getToken(SPLParser.RPAREN, 0); }
 		public StatementContext statement() {
 			return getRuleContext(StatementContext.class,0);
 		}
@@ -599,15 +599,15 @@ public class ArithmeticExpressionParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_whileStmt; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ArithmeticExpressionListener ) ((ArithmeticExpressionListener)listener).enterWhileStmt(this);
+			if ( listener instanceof SPLListener ) ((SPLListener)listener).enterWhileStmt(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ArithmeticExpressionListener ) ((ArithmeticExpressionListener)listener).exitWhileStmt(this);
+			if ( listener instanceof SPLListener ) ((SPLListener)listener).exitWhileStmt(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ArithmeticExpressionVisitor ) return ((ArithmeticExpressionVisitor<? extends T>)visitor).visitWhileStmt(this);
+			if ( visitor instanceof SPLVisitor ) return ((SPLVisitor<? extends T>)visitor).visitWhileStmt(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -643,8 +643,8 @@ public class ArithmeticExpressionParser extends Parser {
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class BlockContext extends ParserRuleContext {
-		public TerminalNode LBRACE() { return getToken(ArithmeticExpressionParser.LBRACE, 0); }
-		public TerminalNode RBRACE() { return getToken(ArithmeticExpressionParser.RBRACE, 0); }
+		public TerminalNode LBRACE() { return getToken(SPLParser.LBRACE, 0); }
+		public TerminalNode RBRACE() { return getToken(SPLParser.RBRACE, 0); }
 		public List<DeclarationContext> declaration() {
 			return getRuleContexts(DeclarationContext.class);
 		}
@@ -657,15 +657,15 @@ public class ArithmeticExpressionParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_block; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ArithmeticExpressionListener ) ((ArithmeticExpressionListener)listener).enterBlock(this);
+			if ( listener instanceof SPLListener ) ((SPLListener)listener).enterBlock(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ArithmeticExpressionListener ) ((ArithmeticExpressionListener)listener).exitBlock(this);
+			if ( listener instanceof SPLListener ) ((SPLListener)listener).exitBlock(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ArithmeticExpressionVisitor ) return ((ArithmeticExpressionVisitor<? extends T>)visitor).visitBlock(this);
+			if ( visitor instanceof SPLVisitor ) return ((SPLVisitor<? extends T>)visitor).visitBlock(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -719,15 +719,15 @@ public class ArithmeticExpressionParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_expression; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ArithmeticExpressionListener ) ((ArithmeticExpressionListener)listener).enterExpression(this);
+			if ( listener instanceof SPLListener ) ((SPLListener)listener).enterExpression(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ArithmeticExpressionListener ) ((ArithmeticExpressionListener)listener).exitExpression(this);
+			if ( listener instanceof SPLListener ) ((SPLListener)listener).exitExpression(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ArithmeticExpressionVisitor ) return ((ArithmeticExpressionVisitor<? extends T>)visitor).visitExpression(this);
+			if ( visitor instanceof SPLVisitor ) return ((SPLVisitor<? extends T>)visitor).visitExpression(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -755,8 +755,8 @@ public class ArithmeticExpressionParser extends Parser {
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class AssignmentContext extends ParserRuleContext {
-		public TerminalNode IDENTIFIER() { return getToken(ArithmeticExpressionParser.IDENTIFIER, 0); }
-		public TerminalNode ASSIGN() { return getToken(ArithmeticExpressionParser.ASSIGN, 0); }
+		public TerminalNode IDENTIFIER() { return getToken(SPLParser.IDENTIFIER, 0); }
+		public TerminalNode ASSIGN() { return getToken(SPLParser.ASSIGN, 0); }
 		public AssignmentContext assignment() {
 			return getRuleContext(AssignmentContext.class,0);
 		}
@@ -769,15 +769,15 @@ public class ArithmeticExpressionParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_assignment; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ArithmeticExpressionListener ) ((ArithmeticExpressionListener)listener).enterAssignment(this);
+			if ( listener instanceof SPLListener ) ((SPLListener)listener).enterAssignment(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ArithmeticExpressionListener ) ((ArithmeticExpressionListener)listener).exitAssignment(this);
+			if ( listener instanceof SPLListener ) ((SPLListener)listener).exitAssignment(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ArithmeticExpressionVisitor ) return ((ArithmeticExpressionVisitor<? extends T>)visitor).visitAssignment(this);
+			if ( visitor instanceof SPLVisitor ) return ((SPLVisitor<? extends T>)visitor).visitAssignment(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -828,9 +828,9 @@ public class ArithmeticExpressionParser extends Parser {
 		public Logic_andContext logic_and(int i) {
 			return getRuleContext(Logic_andContext.class,i);
 		}
-		public List<TerminalNode> OR() { return getTokens(ArithmeticExpressionParser.OR); }
+		public List<TerminalNode> OR() { return getTokens(SPLParser.OR); }
 		public TerminalNode OR(int i) {
-			return getToken(ArithmeticExpressionParser.OR, i);
+			return getToken(SPLParser.OR, i);
 		}
 		public Logic_orContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -838,15 +838,15 @@ public class ArithmeticExpressionParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_logic_or; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ArithmeticExpressionListener ) ((ArithmeticExpressionListener)listener).enterLogic_or(this);
+			if ( listener instanceof SPLListener ) ((SPLListener)listener).enterLogic_or(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ArithmeticExpressionListener ) ((ArithmeticExpressionListener)listener).exitLogic_or(this);
+			if ( listener instanceof SPLListener ) ((SPLListener)listener).exitLogic_or(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ArithmeticExpressionVisitor ) return ((ArithmeticExpressionVisitor<? extends T>)visitor).visitLogic_or(this);
+			if ( visitor instanceof SPLVisitor ) return ((SPLVisitor<? extends T>)visitor).visitLogic_or(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -897,9 +897,9 @@ public class ArithmeticExpressionParser extends Parser {
 		public EqualityContext equality(int i) {
 			return getRuleContext(EqualityContext.class,i);
 		}
-		public List<TerminalNode> AND() { return getTokens(ArithmeticExpressionParser.AND); }
+		public List<TerminalNode> AND() { return getTokens(SPLParser.AND); }
 		public TerminalNode AND(int i) {
-			return getToken(ArithmeticExpressionParser.AND, i);
+			return getToken(SPLParser.AND, i);
 		}
 		public Logic_andContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -907,15 +907,15 @@ public class ArithmeticExpressionParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_logic_and; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ArithmeticExpressionListener ) ((ArithmeticExpressionListener)listener).enterLogic_and(this);
+			if ( listener instanceof SPLListener ) ((SPLListener)listener).enterLogic_and(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ArithmeticExpressionListener ) ((ArithmeticExpressionListener)listener).exitLogic_and(this);
+			if ( listener instanceof SPLListener ) ((SPLListener)listener).exitLogic_and(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ArithmeticExpressionVisitor ) return ((ArithmeticExpressionVisitor<? extends T>)visitor).visitLogic_and(this);
+			if ( visitor instanceof SPLVisitor ) return ((SPLVisitor<? extends T>)visitor).visitLogic_and(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -966,13 +966,13 @@ public class ArithmeticExpressionParser extends Parser {
 		public ComparisonContext comparison(int i) {
 			return getRuleContext(ComparisonContext.class,i);
 		}
-		public List<TerminalNode> NOTEQUAL() { return getTokens(ArithmeticExpressionParser.NOTEQUAL); }
+		public List<TerminalNode> NOTEQUAL() { return getTokens(SPLParser.NOTEQUAL); }
 		public TerminalNode NOTEQUAL(int i) {
-			return getToken(ArithmeticExpressionParser.NOTEQUAL, i);
+			return getToken(SPLParser.NOTEQUAL, i);
 		}
-		public List<TerminalNode> EQUAL() { return getTokens(ArithmeticExpressionParser.EQUAL); }
+		public List<TerminalNode> EQUAL() { return getTokens(SPLParser.EQUAL); }
 		public TerminalNode EQUAL(int i) {
-			return getToken(ArithmeticExpressionParser.EQUAL, i);
+			return getToken(SPLParser.EQUAL, i);
 		}
 		public EqualityContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -980,15 +980,15 @@ public class ArithmeticExpressionParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_equality; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ArithmeticExpressionListener ) ((ArithmeticExpressionListener)listener).enterEquality(this);
+			if ( listener instanceof SPLListener ) ((SPLListener)listener).enterEquality(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ArithmeticExpressionListener ) ((ArithmeticExpressionListener)listener).exitEquality(this);
+			if ( listener instanceof SPLListener ) ((SPLListener)listener).exitEquality(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ArithmeticExpressionVisitor ) return ((ArithmeticExpressionVisitor<? extends T>)visitor).visitEquality(this);
+			if ( visitor instanceof SPLVisitor ) return ((SPLVisitor<? extends T>)visitor).visitEquality(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1047,21 +1047,21 @@ public class ArithmeticExpressionParser extends Parser {
 		public TermContext term(int i) {
 			return getRuleContext(TermContext.class,i);
 		}
-		public List<TerminalNode> GREATER() { return getTokens(ArithmeticExpressionParser.GREATER); }
+		public List<TerminalNode> GREATER() { return getTokens(SPLParser.GREATER); }
 		public TerminalNode GREATER(int i) {
-			return getToken(ArithmeticExpressionParser.GREATER, i);
+			return getToken(SPLParser.GREATER, i);
 		}
-		public List<TerminalNode> GEQUAL() { return getTokens(ArithmeticExpressionParser.GEQUAL); }
+		public List<TerminalNode> GEQUAL() { return getTokens(SPLParser.GEQUAL); }
 		public TerminalNode GEQUAL(int i) {
-			return getToken(ArithmeticExpressionParser.GEQUAL, i);
+			return getToken(SPLParser.GEQUAL, i);
 		}
-		public List<TerminalNode> LESSER() { return getTokens(ArithmeticExpressionParser.LESSER); }
+		public List<TerminalNode> LESSER() { return getTokens(SPLParser.LESSER); }
 		public TerminalNode LESSER(int i) {
-			return getToken(ArithmeticExpressionParser.LESSER, i);
+			return getToken(SPLParser.LESSER, i);
 		}
-		public List<TerminalNode> LEQUAL() { return getTokens(ArithmeticExpressionParser.LEQUAL); }
+		public List<TerminalNode> LEQUAL() { return getTokens(SPLParser.LEQUAL); }
 		public TerminalNode LEQUAL(int i) {
-			return getToken(ArithmeticExpressionParser.LEQUAL, i);
+			return getToken(SPLParser.LEQUAL, i);
 		}
 		public ComparisonContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -1069,15 +1069,15 @@ public class ArithmeticExpressionParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_comparison; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ArithmeticExpressionListener ) ((ArithmeticExpressionListener)listener).enterComparison(this);
+			if ( listener instanceof SPLListener ) ((SPLListener)listener).enterComparison(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ArithmeticExpressionListener ) ((ArithmeticExpressionListener)listener).exitComparison(this);
+			if ( listener instanceof SPLListener ) ((SPLListener)listener).exitComparison(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ArithmeticExpressionVisitor ) return ((ArithmeticExpressionVisitor<? extends T>)visitor).visitComparison(this);
+			if ( visitor instanceof SPLVisitor ) return ((SPLVisitor<? extends T>)visitor).visitComparison(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1136,13 +1136,13 @@ public class ArithmeticExpressionParser extends Parser {
 		public FactorContext factor(int i) {
 			return getRuleContext(FactorContext.class,i);
 		}
-		public List<TerminalNode> MINUS() { return getTokens(ArithmeticExpressionParser.MINUS); }
+		public List<TerminalNode> MINUS() { return getTokens(SPLParser.MINUS); }
 		public TerminalNode MINUS(int i) {
-			return getToken(ArithmeticExpressionParser.MINUS, i);
+			return getToken(SPLParser.MINUS, i);
 		}
-		public List<TerminalNode> PLUS() { return getTokens(ArithmeticExpressionParser.PLUS); }
+		public List<TerminalNode> PLUS() { return getTokens(SPLParser.PLUS); }
 		public TerminalNode PLUS(int i) {
-			return getToken(ArithmeticExpressionParser.PLUS, i);
+			return getToken(SPLParser.PLUS, i);
 		}
 		public TermContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -1150,15 +1150,15 @@ public class ArithmeticExpressionParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_term; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ArithmeticExpressionListener ) ((ArithmeticExpressionListener)listener).enterTerm(this);
+			if ( listener instanceof SPLListener ) ((SPLListener)listener).enterTerm(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ArithmeticExpressionListener ) ((ArithmeticExpressionListener)listener).exitTerm(this);
+			if ( listener instanceof SPLListener ) ((SPLListener)listener).exitTerm(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ArithmeticExpressionVisitor ) return ((ArithmeticExpressionVisitor<? extends T>)visitor).visitTerm(this);
+			if ( visitor instanceof SPLVisitor ) return ((SPLVisitor<? extends T>)visitor).visitTerm(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1217,13 +1217,13 @@ public class ArithmeticExpressionParser extends Parser {
 		public UnaryContext unary(int i) {
 			return getRuleContext(UnaryContext.class,i);
 		}
-		public List<TerminalNode> FSLASH() { return getTokens(ArithmeticExpressionParser.FSLASH); }
+		public List<TerminalNode> FSLASH() { return getTokens(SPLParser.FSLASH); }
 		public TerminalNode FSLASH(int i) {
-			return getToken(ArithmeticExpressionParser.FSLASH, i);
+			return getToken(SPLParser.FSLASH, i);
 		}
-		public List<TerminalNode> ASTERIKS() { return getTokens(ArithmeticExpressionParser.ASTERIKS); }
+		public List<TerminalNode> ASTERIKS() { return getTokens(SPLParser.ASTERIKS); }
 		public TerminalNode ASTERIKS(int i) {
-			return getToken(ArithmeticExpressionParser.ASTERIKS, i);
+			return getToken(SPLParser.ASTERIKS, i);
 		}
 		public FactorContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -1231,15 +1231,15 @@ public class ArithmeticExpressionParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_factor; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ArithmeticExpressionListener ) ((ArithmeticExpressionListener)listener).enterFactor(this);
+			if ( listener instanceof SPLListener ) ((SPLListener)listener).enterFactor(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ArithmeticExpressionListener ) ((ArithmeticExpressionListener)listener).exitFactor(this);
+			if ( listener instanceof SPLListener ) ((SPLListener)listener).exitFactor(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ArithmeticExpressionVisitor ) return ((ArithmeticExpressionVisitor<? extends T>)visitor).visitFactor(this);
+			if ( visitor instanceof SPLVisitor ) return ((SPLVisitor<? extends T>)visitor).visitFactor(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1295,8 +1295,8 @@ public class ArithmeticExpressionParser extends Parser {
 		public UnaryContext unary() {
 			return getRuleContext(UnaryContext.class,0);
 		}
-		public TerminalNode NOT() { return getToken(ArithmeticExpressionParser.NOT, 0); }
-		public TerminalNode MINUS() { return getToken(ArithmeticExpressionParser.MINUS, 0); }
+		public TerminalNode NOT() { return getToken(SPLParser.NOT, 0); }
+		public TerminalNode MINUS() { return getToken(SPLParser.MINUS, 0); }
 		public PrimaryContext primary() {
 			return getRuleContext(PrimaryContext.class,0);
 		}
@@ -1306,15 +1306,15 @@ public class ArithmeticExpressionParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_unary; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ArithmeticExpressionListener ) ((ArithmeticExpressionListener)listener).enterUnary(this);
+			if ( listener instanceof SPLListener ) ((SPLListener)listener).enterUnary(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ArithmeticExpressionListener ) ((ArithmeticExpressionListener)listener).exitUnary(this);
+			if ( listener instanceof SPLListener ) ((SPLListener)listener).exitUnary(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ArithmeticExpressionVisitor ) return ((ArithmeticExpressionVisitor<? extends T>)visitor).visitUnary(this);
+			if ( visitor instanceof SPLVisitor ) return ((SPLVisitor<? extends T>)visitor).visitUnary(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1374,31 +1374,31 @@ public class ArithmeticExpressionParser extends Parser {
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class PrimaryContext extends ParserRuleContext {
-		public TerminalNode TRUE() { return getToken(ArithmeticExpressionParser.TRUE, 0); }
-		public TerminalNode FALSE() { return getToken(ArithmeticExpressionParser.FALSE, 0); }
-		public TerminalNode NUMBER() { return getToken(ArithmeticExpressionParser.NUMBER, 0); }
-		public TerminalNode STRING() { return getToken(ArithmeticExpressionParser.STRING, 0); }
-		public TerminalNode LPAREN() { return getToken(ArithmeticExpressionParser.LPAREN, 0); }
+		public TerminalNode TRUE() { return getToken(SPLParser.TRUE, 0); }
+		public TerminalNode FALSE() { return getToken(SPLParser.FALSE, 0); }
+		public TerminalNode NUMBER() { return getToken(SPLParser.NUMBER, 0); }
+		public TerminalNode STRING() { return getToken(SPLParser.STRING, 0); }
+		public TerminalNode LPAREN() { return getToken(SPLParser.LPAREN, 0); }
 		public ExpressionContext expression() {
 			return getRuleContext(ExpressionContext.class,0);
 		}
-		public TerminalNode RPAREN() { return getToken(ArithmeticExpressionParser.RPAREN, 0); }
-		public TerminalNode IDENTIFIER() { return getToken(ArithmeticExpressionParser.IDENTIFIER, 0); }
+		public TerminalNode RPAREN() { return getToken(SPLParser.RPAREN, 0); }
+		public TerminalNode IDENTIFIER() { return getToken(SPLParser.IDENTIFIER, 0); }
 		public PrimaryContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_primary; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ArithmeticExpressionListener ) ((ArithmeticExpressionListener)listener).enterPrimary(this);
+			if ( listener instanceof SPLListener ) ((SPLListener)listener).enterPrimary(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ArithmeticExpressionListener ) ((ArithmeticExpressionListener)listener).exitPrimary(this);
+			if ( listener instanceof SPLListener ) ((SPLListener)listener).exitPrimary(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ArithmeticExpressionVisitor ) return ((ArithmeticExpressionVisitor<? extends T>)visitor).visitPrimary(this);
+			if ( visitor instanceof SPLVisitor ) return ((SPLVisitor<? extends T>)visitor).visitPrimary(this);
 			else return visitor.visitChildren(this);
 		}
 	}

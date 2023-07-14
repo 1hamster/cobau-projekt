@@ -4,7 +4,7 @@ import org.antlr.v4.runtime.tree.*;
 import java.util.HashMap;
 import java.util.Map;
 
-public class SemanticAnalyzer extends ArithmeticExpressionBaseVisitor<Void> {
+public class SemanticAnalyzer extends SPLBaseVisitor<Void> {
     private Map<String, Integer> variables;
 
     public SemanticAnalyzer() {
@@ -12,7 +12,7 @@ public class SemanticAnalyzer extends ArithmeticExpressionBaseVisitor<Void> {
     }
 
     @Override
-    public Void visitVarDecl(ArithmeticExpressionParser.VarDeclContext ctx) {
+    public Void visitVarDecl(SPLParser.VarDeclContext ctx) {
         String variableName = ctx.IDENTIFIER().getText();
         if (variables.containsKey(variableName)) {
             throw new RuntimeException("Variable " + variableName + " already declared.");
@@ -25,60 +25,60 @@ public class SemanticAnalyzer extends ArithmeticExpressionBaseVisitor<Void> {
     }
 
     @Override
-    public Void visitExpression(ArithmeticExpressionParser.ExpressionContext ctx) {
+    public Void visitExpression(SPLParser.ExpressionContext ctx) {
         visitAssignment(ctx.assignment());
         checkBooleanConversion(ctx);
         return null;
     }
 
-    private void checkBooleanConversion(ArithmeticExpressionParser.ExpressionContext ctx) {
+    private void checkBooleanConversion(SPLParser.ExpressionContext ctx) {
         if (ctx.assignment() != null) {
-            ArithmeticExpressionParser.AssignmentContext assignment = ctx.assignment();
+            SPLParser.AssignmentContext assignment = ctx.assignment();
             if (!isBooleanType(assignment)) {
                 throw new RuntimeException("Non-boolean value used in a boolean context.");
             }
         }
     }
 
-    private boolean isBooleanType(ArithmeticExpressionParser.AssignmentContext assignment) {
+    private boolean isBooleanType(SPLParser.AssignmentContext assignment) {
         return isBooleanType(assignment.logic_or());
     }
 
-    private boolean isBooleanType(ArithmeticExpressionParser.Logic_orContext logicOr) {
+    private boolean isBooleanType(SPLParser.Logic_orContext logicOr) {
         return isBooleanType(logicOr.logic_and(0));
     }
 
-    private boolean isBooleanType(ArithmeticExpressionParser.Logic_andContext logicAnd) {
+    private boolean isBooleanType(SPLParser.Logic_andContext logicAnd) {
         return isBooleanType(logicAnd.equality(0));
     }
 
-    private boolean isBooleanType(ArithmeticExpressionParser.EqualityContext equality) {
+    private boolean isBooleanType(SPLParser.EqualityContext equality) {
         return isBooleanType(equality.comparison(0));
     }
 
-    private boolean isBooleanType(ArithmeticExpressionParser.ComparisonContext comparison) {
+    private boolean isBooleanType(SPLParser.ComparisonContext comparison) {
         return isBooleanType(comparison.term(0));
     }
 
-    private boolean isBooleanType(ArithmeticExpressionParser.TermContext term) {
+    private boolean isBooleanType(SPLParser.TermContext term) {
         return isBooleanType(term.factor(0));
     }
 
-    private boolean isBooleanType(ArithmeticExpressionParser.FactorContext factor) {
+    private boolean isBooleanType(SPLParser.FactorContext factor) {
         return isBooleanType(factor.unary(0));
     }
 
-    private boolean isBooleanType(ArithmeticExpressionParser.UnaryContext unary) {
+    private boolean isBooleanType(SPLParser.UnaryContext unary) {
         return unary.NOT() != null || isBooleanType(unary.primary());
     }
 
-    private boolean isBooleanType(ArithmeticExpressionParser.PrimaryContext primary) {
+    private boolean isBooleanType(SPLParser.PrimaryContext primary) {
         return primary.TRUE() != null || primary.FALSE() != null;
     }
 
 
     @Override
-    public Void visitTerm(ArithmeticExpressionParser.TermContext ctx) {
+    public Void visitTerm(SPLParser.TermContext ctx) {
         visitFactor(ctx.factor(0));
         for (int i = 1; i < ctx.factor().size(); i++) {
             visitFactor(ctx.factor(i));
@@ -88,7 +88,7 @@ public class SemanticAnalyzer extends ArithmeticExpressionBaseVisitor<Void> {
     }
 
     @Override
-    public Void visitFactor(ArithmeticExpressionParser.FactorContext ctx) {
+    public Void visitFactor(SPLParser.FactorContext ctx) {
         visitUnary(ctx.unary(0));
         for (int i = 1; i < ctx.unary().size(); i++) {
             visitUnary(ctx.unary(i));
@@ -97,7 +97,7 @@ public class SemanticAnalyzer extends ArithmeticExpressionBaseVisitor<Void> {
     }
 
     @Override
-    public Void visitUnary(ArithmeticExpressionParser.UnaryContext ctx) {
+    public Void visitUnary(SPLParser.UnaryContext ctx) {
         if (ctx.IDENTIFIER() != null) {
             String variableName = ctx.IDENTIFIER().getText();
             if (!variables.containsKey(variableName)) {
@@ -111,7 +111,7 @@ public class SemanticAnalyzer extends ArithmeticExpressionBaseVisitor<Void> {
     }
 
     @Override
-    public Void visitPrimary(ArithmeticExpressionParser.PrimaryContext ctx) {
+    public Void visitPrimary(SPLParser.PrimaryContext ctx) {
         if (ctx.IDENTIFIER() != null) {
             String variableName = ctx.IDENTIFIER().getText();
             if (!variables.containsKey(variableName)) {
@@ -121,7 +121,7 @@ public class SemanticAnalyzer extends ArithmeticExpressionBaseVisitor<Void> {
         return null;
     }
 
-    private void checkArithmeticOperators(ArithmeticExpressionParser.TermContext ctx) {
+    private void checkArithmeticOperators(SPLParser.TermContext ctx) {
         for (int i = 1; i < ctx.getChildCount(); i += 2) {
             TerminalNode operatorNode = (TerminalNode) ctx.getChild(i);
             String operator = operatorNode.getText();
